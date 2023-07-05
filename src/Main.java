@@ -9,7 +9,7 @@ public class Main {
         String name = getString();
         System.out.println(String.format("Hello %s", name));
 
-        while (true) {
+        for (int i = 0; i < 2; i++) {
             System.out.println("Type radius");
 
             int r = getInt();
