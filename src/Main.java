@@ -16,8 +16,7 @@ public class Main {
         System.out.println("Area is " + area);
     }
     private static String getString() {
-        String name = new Scanner(System.in).next();
-        return name;
+        return new Scanner(System.in).next();
     }
 
     private static int getInt() {
