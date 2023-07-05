@@ -8,12 +8,15 @@ public class Main {
         System.out.println("Type your name");
         String name = getString();
         System.out.println(String.format("Hello %s", name));
-        System.out.println("Type radius");
 
-        int r = getInt();
-        double area = calculateArea(r);
+        while (true) {
+            System.out.println("Type radius");
 
-        System.out.println("Area is " + area);
+            int r = getInt();
+            double area = calculateArea(r);
+
+            System.out.println("Area is " + area);
+        }
     }
     private static String getString() {
         String name = new Scanner(System.in).next();
