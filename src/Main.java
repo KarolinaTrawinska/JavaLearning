@@ -11,7 +11,7 @@ public class Main {
         System.out.println("Type radius");
 
         int r = getInt();
-        double area = Math.PI * r * r;
+        double area = calculateArea(r);
 
         System.out.println("Area is " + area);
     }
@@ -22,6 +22,10 @@ public class Main {
 
     private static int getInt() {
         return new Scanner(System.in).nextInt();
+    }
+
+    private static double calculateArea (int r) {
+        return Math.PI * r * r;
     }
 
 }
