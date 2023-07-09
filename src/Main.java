@@ -1,33 +1,25 @@
 
-////    User input
+////    User input2
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Type your name");
-        String name = getString();
-        System.out.println(String.format("Hello %s", name));
+        int a, b, c;
+        int trianglePerimeter;
 
-        for (int i = 0; i < 2; i++) {
-            System.out.println("Type radius");
+        System.out.println("Type side a of the traingle");
+        a = getInt();
+        System.out.println("Type side b of the traingle");
+        b = getInt();
+        System.out.println("Type side c of the traingle");
+        c = getInt();
 
-            int r = getInt();
-            double area = calculateArea(r);
-
-            System.out.println("Area is " + area);
-        }
-    }
-    private static String getString() {
-        return new Scanner(System.in).next();
+        trianglePerimeter = a + b + c;
+        System.out.println("Triangle perimeter is " + trianglePerimeter);
     }
 
     private static int getInt() {
         return new Scanner(System.in).nextInt();
     }
-
-    private static double calculateArea (int r) {
-        return Math.PI * r * r;
-    }
-
 }
