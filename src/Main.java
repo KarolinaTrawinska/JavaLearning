@@ -10,14 +10,13 @@ public class Main {
         int number = getInt();
 
         while (number < 0) {
-            System.out.println("You typed incorrent value, please type number that is bigger than 0 ");
-            number = getInt();
-            }
-        if (number > 0) {
+            System.out.println("You typed incorrect value, please type number that is bigger than 0 ");
+            number = getInt();}
+
             double area = Math.PI * number * number;
             System.out.println("You typed correct number. Area equals " + area);
         }
-    }
+
     private static int getInt() {
         return new Scanner(System.in).nextInt();
     }
