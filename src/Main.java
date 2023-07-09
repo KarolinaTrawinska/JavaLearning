@@ -1,25 +1,15 @@
 
-////    User input2
-
-import java.util.Scanner;
+////    Loops
 
 public class Main {
     public static void main(String[] args) {
-        int a, b, c;
-        int trianglePerimeter;
+        int x = 7;
 
-        System.out.println("Type side a of the traingle");
-        a = getInt();
-        System.out.println("Type side b of the traingle");
-        b = getInt();
-        System.out.println("Type side c of the traingle");
-        c = getInt();
-
-        trianglePerimeter = a + b + c;
-        System.out.println("Triangle perimeter is " + trianglePerimeter);
-    }
-
-    private static int getInt() {
-        return new Scanner(System.in).nextInt();
+        if (x > 0) {
+            System.out.println("x is bigger than 0");
+        } else if (x < 0) {
+            System.out.println("x is smaller then 0");
+        }
     }
 }
+
