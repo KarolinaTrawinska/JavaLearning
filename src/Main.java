@@ -11,10 +11,10 @@ public class Main {
 
         while (number < 0) {
             System.out.println("You typed incorrect value, please type number that is bigger than 0 ");
-            number = getInt();}
-
-            double area = Math.PI * number * number;
-            System.out.println("You typed correct number. Area equals " + area);
+            number = getInt();
+        }
+        double area = Math.PI * number * number;
+        System.out.println("You typed correct number. Area equals " + area);
         }
 
     private static int getInt() {
