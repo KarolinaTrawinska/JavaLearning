@@ -1,21 +1,28 @@
 
-////    Loops
+////    Loops and data validation
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Type your room temperature");
-        int roomTemperature = getInt();
 
-        if (roomTemperature < 20) {
-            System.out.println("Room temperature is low");
-        } else if (roomTemperature > 20) {
-            System.out.println("Room temperature is high");
+        System.out.println("Type the radius");
+        int number = getInt();
+
+        while (number < 0) {
+            System.out.println("You typed incorrent value, please type number that is bigger than 0 ");
+            number = getInt();
+            }
+        if (number > 0) {
+            double area = Math.PI * number * number;
+            System.out.println("You typed correct number. Area equals " + area);
         }
     }
-
     private static int getInt() {
         return new Scanner(System.in).nextInt();
     }
 }
+
+
+//Program polega na pobraniu od użytkownika licznby, która ma być wartością promienia koła. Następnie sprawdza czy jest to wartość poprawna - większa od zera.
+//Potem wyświetla pole koła.
