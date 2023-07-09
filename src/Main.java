@@ -1,15 +1,21 @@
 
 ////    Loops
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        int x = 7;
+        System.out.println("Type your room temperature");
+        int roomTemperature = getInt();
 
-        if (x > 0) {
-            System.out.println("x is bigger than 0");
-        } else if (x < 0) {
-            System.out.println("x is smaller then 0");
+        if (roomTemperature < 20) {
+            System.out.println("Room temperature is low");
+        } else if (roomTemperature > 20) {
+            System.out.println("Room temperature is high");
         }
     }
-}
 
+    private static int getInt() {
+        return new Scanner(System.in).nextInt();
+    }
+}
