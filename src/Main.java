@@ -1,30 +1,38 @@
+//Switch and default
 
-//// Logical operators
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
-
-//Program który liczy pole prostokąta jeśli użytkownik poda dwa boki ale tylko gdy są większe od zera
-
->>>>>>> parent of c64805c (Conditional operators)
->>>>>>> Stashed changes
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
-        int a, b;
+public class Main{
+    public static void main(String[] args){
+        int dayOftheWeek;
 
-        System.out.println("Type first side of the rectangle");
-        a = getInt();
+        System.out.println("Type number of the day of the week");
+        dayOftheWeek = getInt();
 
-        System.out.println("Type second side of the rectangle");
-        b = getInt();
-
-        if (a > 0 && b > 0) {
-            System.out.println("Rectangle area equals " + a * b);
-        } else {
-            System.out.println("Incorrect data");
+        switch (dayOftheWeek) {
+            case 1:
+                System.out.println("It is Monday");
+                break;
+            case 2:
+                System.out.println("It is Tuesday");
+                break;
+            case 3:
+                System.out.println("It is Wednesday");
+                break;
+            case 4:
+                System.out.println("It is Thursday");
+                break;
+            case 5:
+                System.out.println("It is Friday");
+                break;
+            case 6:
+                System.out.println("It is Saturday");
+                break;
+            case 7:
+                System.out.println("It is Sunday");
+                break;
+            default:
+                System.out.println("Incorrect data");
         }
     }
     private static int getInt() {
@@ -33,13 +41,8 @@ public class Main {
 }
 
 
-<<<<<<< Updated upstream
 
-//Program, który po podaniu numer dnia tygodnia określa czy jest to dzień pracujący czy weekend.
-=======
-<<<<<<< HEAD
 
-//Program, który po podaniu numer dnia tygodnia określa czy jest to dzień pracujący czy weekend.
-=======
->>>>>>> parent of c64805c (Conditional operators)
->>>>>>> Stashed changes
+//Pobranie numeru dnia tygodnia, porównanie za pomocą instrukcji switch. Jeśli żadna liczba nie pasuje do watości zmiennej
+// dnia tygodnia to zostanie uruchomiona instrukacj default.
+
