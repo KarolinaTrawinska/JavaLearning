@@ -1,27 +1,23 @@
-//If else practice
+//Continue
 
 import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args){
-        int year;
+        int radius;
 
-        System.out.println("Type year");
-        year = getInt();
+        do {
+            System.out.println("Type radius");
+            radius = getInt();
 
-        if ((year % 400 == 0) || (year % 4 == 0) && (year % 100 != 0)) {
-            System.out.println("It is a leap year");
-        } else {
-            System.out.println("It is not a leap year");
-        }
+            if (radius <= 0) {
+                System.out.println("Incorrect data, type number bigger than 0");
+                continue;
+            }
+            System.out.println("Area equals" + Math.PI * radius * radius);
+        } while (radius <= 0);
     }
-    private static int getInt(){
+    private static int getInt() {
         return new Scanner(System.in).nextInt();
     }
 }
-
-
-
-
-
-//Program sprawdzjący czy dany rok jest rokiem przestępnym.
