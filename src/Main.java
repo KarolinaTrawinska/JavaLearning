@@ -2,21 +2,21 @@
 
 import java.util.Scanner;
 
-public class Main{
+public class Main {
     public static void main(String[] args) {
-        String name;
+        int age;
+        boolean isOfage;
+        isOfage = true;
 
-        System.out.println("Type your name");
-        name = getString();
-
-        if (name.equals("Karolina")) {
-            System.out.println("We have the same name");
+        System.out.println("Type your age");
+        age = getInt();
+        if (age >= 18) {
+            System.out.println("Are you of age? " + isOfage);
         } else {
-            System.out.println("We have different name");
+            System.out.println("You are underage");
         }
     }
-    private static String getString() {
-        return new Scanner(System.in).next();
+    public static int getInt() {
+        return new Scanner(System.in).nextInt();
     }
 }
-
