@@ -2,21 +2,26 @@
 
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
-        int age;
-        boolean isOfage;
-        isOfage = true;
+public class Main{
+    public static void main(String[] args){
+        int year;
 
-        System.out.println("Type your age");
-        age = getInt();
-        if (age >= 18) {
-            System.out.println("Are you of age? " + isOfage);
+        System.out.println("Type year");
+        year = getInt();
+
+        if ((year % 400 == 0) || (year % 4 == 0) && (year % 100 != 0)) {
+            System.out.println("It is a leap year");
         } else {
-            System.out.println("You are underage");
+            System.out.println("It is not a leap year");
         }
     }
-    public static int getInt() {
+    private static int getInt(){
         return new Scanner(System.in).nextInt();
     }
 }
+
+
+
+
+
+//Program sprawdzjący czy dany rok jest rokiem przestępnym.
