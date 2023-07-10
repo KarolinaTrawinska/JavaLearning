@@ -1,16 +1,27 @@
 
-//// Boolean2
+//// Logical operators
+
+//Program który liczy pole prostokąta jeśli użytkownik poda dwa boki ale tylko gdy są większe od zera
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        boolean rainOutside = true;
+        int a, b;
 
-        if (rainOutside == true) {
-            System.out.println("Stay at home");
-        } else {
-            System.out.println("Go for a walk");
+        System.out.println("Type first side of the rectangle");
+        a = getInt();
+
+        System.out.println("Type second side of the rectangle");
+        b = getInt();
+
+        if (a > 0 && b > 0) {
+            System.out.println("Rectangle area equals " + a * b);
         }
     }
+    private static int getInt() {
+        return new Scanner(System.in).nextInt();
+    }
 }
+
+
