@@ -1,27 +1,25 @@
 
-////    Loops and data validation
+//// Boolean
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        int number;
+        boolean isEven;
 
-        System.out.println("Type the radius");
-        int number = getInt();
+        System.out.println("Type a number");
+        number = getInt();
 
-        while (number < 0) {
-            System.out.println("You typed incorrect value, please type number that is bigger than 0 ");
-            number = getInt();
+        if (number % 2 == 0) {
+            isEven = true;
+            System.out.println("The number is even");
+        } else {
+            isEven = false;
+            System.out.println("The number is odd");
         }
-        double area = Math.PI * number * number;
-        System.out.println("You typed correct number. Area equals " + area);
-        }
-
+    }
     private static int getInt() {
         return new Scanner(System.in).nextInt();
     }
 }
-
-
-//Program polega na pobraniu od użytkownika licznby, która ma być wartością promienia koła. Następnie sprawdza czy jest to wartość poprawna - większa od zera.
-//Potem wyświetla pole koła.
