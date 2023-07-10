@@ -1,22 +1,24 @@
 
 //// Logical operators
 
-//Program który liczy pole prostokąta jeśli użytkownik poda dwa boki ale tylko gdy są większe od zera
+//Program który po wpisaniu numeru dnia tygodnia określa czy jest weekend czy dzień pracujący
+
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int a, b;
+        int dayOftheWeek;
 
-        System.out.println("Type first side of the rectangle");
-        a = getInt();
+        System.out.println("Type number of the day of the week");
+        dayOftheWeek = getInt();
 
-        System.out.println("Type second side of the rectangle");
-        b = getInt();
-
-        if (a > 0 && b > 0) {
-            System.out.println("Rectangle area equals " + a * b);
+        if (dayOftheWeek >= 1 && dayOftheWeek < 5) {
+            System.out.println("It is working day");
+        } else if (dayOftheWeek == 5) {
+            System.out.println("Weekend tomorrow!");
+        } else if (dayOftheWeek == 6 || dayOftheWeek == 7) {
+            System.out.println("Hurra! It is weekend!");
         } else {
             System.out.println("Incorrect data");
         }
@@ -25,5 +27,3 @@ public class Main {
         return new Scanner(System.in).nextInt();
     }
 }
-
-
