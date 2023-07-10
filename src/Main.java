@@ -17,6 +17,8 @@ public class Main {
 
         if (a > 0 && b > 0) {
             System.out.println("Rectangle area equals " + a * b);
+        } else {
+            System.out.println("Incorrect data");
         }
     }
     private static int getInt() {
