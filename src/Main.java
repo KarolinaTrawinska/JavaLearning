@@ -1,20 +1,28 @@
 
 //// Logical operators
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+
+//Program który liczy pole prostokąta jeśli użytkownik poda dwa boki ale tylko gdy są większe od zera
+
+>>>>>>> parent of c64805c (Conditional operators)
+>>>>>>> Stashed changes
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int dayOftheWeek;
+        int a, b;
 
-        System.out.println("Type number of the day of the week");
-        dayOftheWeek = getInt();
+        System.out.println("Type first side of the rectangle");
+        a = getInt();
 
-        if (dayOftheWeek >= 1 && dayOftheWeek < 5) {
-            System.out.println("It is working day");
-        } else if (dayOftheWeek == 5) {
-            System.out.println("Weekend tomorrow!");
-        } else if (dayOftheWeek == 6 || dayOftheWeek == 7) {
-            System.out.println("Hurra! It is weekend!");
+        System.out.println("Type second side of the rectangle");
+        b = getInt();
+
+        if (a > 0 && b > 0) {
+            System.out.println("Rectangle area equals " + a * b);
         } else {
             System.out.println("Incorrect data");
         }
@@ -25,5 +33,13 @@ public class Main {
 }
 
 
+<<<<<<< Updated upstream
 
 //Program, który po podaniu numer dnia tygodnia określa czy jest to dzień pracujący czy weekend.
+=======
+<<<<<<< HEAD
+
+//Program, który po podaniu numer dnia tygodnia określa czy jest to dzień pracujący czy weekend.
+=======
+>>>>>>> parent of c64805c (Conditional operators)
+>>>>>>> Stashed changes
