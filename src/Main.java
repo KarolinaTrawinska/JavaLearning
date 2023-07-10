@@ -1,25 +1,16 @@
 
-//// Boolean
+//// Boolean2
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int number;
-        boolean isEven;
+        boolean rainOutside = true;
 
-        System.out.println("Type a number");
-        number = getInt();
-
-        if (number % 2 == 0) {
-            isEven = true;
-            System.out.println("The number is even");
+        if (rainOutside == true) {
+            System.out.println("Stay at home");
         } else {
-            isEven = false;
-            System.out.println("The number is odd");
+            System.out.println("Go for a walk");
         }
-    }
-    private static int getInt() {
-        return new Scanner(System.in).nextInt();
     }
 }
