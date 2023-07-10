@@ -1,9 +1,5 @@
 
 //// Logical operators
-
-//Program który po wpisaniu numeru dnia tygodnia określa czy jest weekend czy dzień pracujący
-
-
 import java.util.Scanner;
 
 public class Main {
@@ -27,3 +23,7 @@ public class Main {
         return new Scanner(System.in).nextInt();
     }
 }
+
+
+
+//Program, który po podaniu numer dnia tygodnia określa czy jest to dzień pracujący czy weekend.
