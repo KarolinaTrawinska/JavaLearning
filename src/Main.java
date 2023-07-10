@@ -1,48 +1,35 @@
-//Switch and default
+//If else practice
 
 import java.util.Scanner;
 
-public class Main{
-    public static void main(String[] args){
-        int dayOftheWeek;
+public class Main {
+    public static void main(String[] args) {
+        int x, y, z;
 
-        System.out.println("Type number of the day of the week");
-        dayOftheWeek = getInt();
+        System.out.println("Typ first number x");
+        x = getInt();
 
-        switch (dayOftheWeek) {
-            case 1:
-                System.out.println("It is Monday");
-                break;
-            case 2:
-                System.out.println("It is Tuesday");
-                break;
-            case 3:
-                System.out.println("It is Wednesday");
-                break;
-            case 4:
-                System.out.println("It is Thursday");
-                break;
-            case 5:
-                System.out.println("It is Friday");
-                break;
-            case 6:
-                System.out.println("It is Saturday");
-                break;
-            case 7:
-                System.out.println("It is Sunday");
-                break;
-            default:
-                System.out.println("Incorrect data");
+        System.out.println("Type second number y");
+        y = getInt();
+
+        System.out.println("Type third number z");
+        z = getInt();
+
+        if (x > y && x > z) {
+            System.out.println("The biggest number is x");
+        } else if (y > x && y > z) {
+            System.out.println("The biggest number is y");
+        } else if (z > x && z > y) {
+            System.out.println("The biggest number is z");
         }
     }
-    private static int getInt() {
-        return new Scanner(System.in).nextInt();
-    }
+        private static int getInt () {
+            return new Scanner(System.in).nextInt();
+        }
 }
 
 
 
 
-//Pobranie numeru dnia tygodnia, porównanie za pomocą instrukcji switch. Jeśli żadna liczba nie pasuje do watości zmiennej
-// dnia tygodnia to zostanie uruchomiona instrukacj default.
+//Pobranie od użytkownika trzech liczb i wypisanie największej z nich.
 
