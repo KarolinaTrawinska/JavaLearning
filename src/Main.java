@@ -1,27 +1,32 @@
-//Arreys
+//Arrays
 
 public class Main {
     public static void main(String[] args) {
-        boolean found = false;
-        int[] numbers = {-1, 23, 245, 8733, 11243};
+        int[] firstArray = {10, 20, 30};
+        int[] secondArray = {10, 20, 30};
 
-        int luckyNumber = 23;
+        if (firstArray.length != secondArray.length) {
+            System.out.println("They are not the same.");
+        } else {
+            boolean areDifferent = false;
 
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] == luckyNumber) {
-                break;
+            for (int i = 0; i < firstArray.length; i++) {
+                if (firstArray[i] != secondArray[i]) {
+                    areDifferent = true;
+                    break;
+                }
             }
-        }
-            if (found = true) {
-                System.out.println("Lucky number was found");
+            if (areDifferent) {
+                System.out.println("They are not the same");
             } else {
-                System.out.println("There is no lucky number");
+                System.out.println("They are the same");
             }
         }
     }
+}
 
 
 
 
-    
-//Program, który odpowiada na pytanie: czy dana liczba znajduje się w tablicy?
+//Porównanie zawartości dwóch tabel polega na skorzystaniu z pętli, przejściu przez wszystkie elementy tablic i
+//porównaniu ich ze sobą.
