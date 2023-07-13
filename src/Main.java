@@ -1,11 +1,11 @@
 //Tables
 
 public class Main {
-    public static void main(String[] args){
-        String[] words = {"Karolina", "ma", "psa"};
+    public static void main(String[] args) {
+        int[] numbers = {-4, 12, 21, 942, -95};
 
-        System.out.println("Number of elements in the table: " + words.length);
-        System.out.println("Number of elements in the first word in the table: " + words[0].length());
-
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
+        }
     }
 }
