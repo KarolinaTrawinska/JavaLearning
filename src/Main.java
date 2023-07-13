@@ -2,15 +2,22 @@
 
 public class Main {
     public static void main(String args[]) {
-        int[] table = {1, 17, 33, 58, 98, 143, 202};
+        int [] numbers = {1, 34, 93, -39, 129, 932, 1039, 44864, 2, -77};
 
-        for (int i = 0; i < table.length; i +=2) {
-            System.out.println(table[i]);
+        int theBiggestnumber = numbers[0];
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] > theBiggestnumber) {
+                theBiggestnumber = numbers[i];
+            }
         }
+        System.out.println("The biggest number is: " + theBiggestnumber);
     }
 }
 
 
 
 
-//Program wypisujący co drugi element z tablicy
+
+
+
+//    Program wypisujący największą liczbę z tablicy
