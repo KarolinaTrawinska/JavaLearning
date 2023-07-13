@@ -1,16 +1,28 @@
 //Arrays
 
 public class Main {
-    public static void main(String args[]) {
-        int [] numbers = {1, 34, 93, -39, 129, 932, 1039, 44864, 2, -77};
+    public static void main(String[] args) {
+        String[] first = {"I", "like", "music"};
+        String[] second = {"I", "like", "music"};
 
-        int theBiggestnumber = numbers[0];
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] > theBiggestnumber) {
-                theBiggestnumber = numbers[i];
+        boolean differenceFound = false;
+
+        if (first.length != second.length) {
+            differenceFound = true;
+        } else {
+            for (int i = 0; i < first.length; i++) {
+                if (!first[i].equals(second[i])) {
+                    differenceFound = true;
+                    break;
+                }
             }
         }
-        System.out.println("The biggest number is: " + theBiggestnumber);
+
+        if (differenceFound) {
+            System.out.println("They are different");
+        } else {
+            System.out.println("They are the same");
+        }
     }
 }
 
@@ -20,4 +32,4 @@ public class Main {
 
 
 
-//    Program wypisujący największą liczbę z tablicy
+//    Porównanie tablic
