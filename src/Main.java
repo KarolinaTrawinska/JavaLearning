@@ -1,26 +1,11 @@
 //Arrays
 
 public class Main {
-    public static void main(String[] args) {
-        int[] firstArray = {10, 20, 30};
-        int[] secondArray = {10, 20, 30};
+    public static void main(String args[]) {
+        int[] table = {1, 17, 33, 58, 98, 143, 202};
 
-        if (firstArray.length != secondArray.length) {
-            System.out.println("They are not the same.");
-        } else {
-            boolean areDifferent = false;
-
-            for (int i = 0; i < firstArray.length; i++) {
-                if (firstArray[i] != secondArray[i]) {
-                    areDifferent = true;
-                    break;
-                }
-            }
-            if (areDifferent) {
-                System.out.println("They are not the same");
-            } else {
-                System.out.println("They are the same");
-            }
+        for (int i = 0; i < table.length; i +=2) {
+            System.out.println(table[i]);
         }
     }
 }
@@ -28,5 +13,4 @@ public class Main {
 
 
 
-//Porównanie zawartości dwóch tabel polega na skorzystaniu z pętli, przejściu przez wszystkie elementy tablic i
-//porównaniu ich ze sobą.
+//Program wypisujący co drugi element z tablicy
