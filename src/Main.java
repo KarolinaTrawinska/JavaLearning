@@ -1,15 +1,11 @@
-//Loops
+//Tables
 
-public class Main{
+public class Main {
     public static void main(String[] args){
-        int i = 1;
+        String[] words = {"Karolina", "ma", "psa"};
 
-        while (i <= 10){
-            if (i != 10) {
-                System.out.print(i++ + ",");
-            } else {
-                System.out.print(i++);
-            }
-        }
+        System.out.println("Number of elements in the table: " + words.length);
+        System.out.println("Number of elements in the first word in the table: " + words[0].length());
+
     }
 }
