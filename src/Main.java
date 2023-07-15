@@ -1,10 +1,13 @@
 //Methods
 
 public class Main {
-    public static void main (String[] args) {
-        sayHello();
+    public static void main(String[] args) {
+        subtraction(-2, 58 );
+        subtraction(77, 23);
+        subtraction(1232, -132);
     }
-    private static void sayHello() {
-        System.out.println("Hello");
+    public static void subtraction(int a, int b) {
+        System.out.println(a - b);
     }
 }
+
