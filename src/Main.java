@@ -1,22 +1,11 @@
 //Methods
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Type a number");
-
-        int number = getInt();
-
-        double squareNumber = countSquare(number);
-
-        System.out.println("Square of this number equals: " + squareNumber);
+        System.out.println("Area equals " + area(5));
     }
-    public static int getInt() {
-        return new Scanner(System.in).nextInt();
-    }
-    public static double countSquare(int number) {
-        return number * number;
+    public static double area (int radius) {
+    return Math.PI * radius * radius;
     }
 }
 
