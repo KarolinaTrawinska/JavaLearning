@@ -1,13 +1,22 @@
 //Methods
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        subtraction(-2, 58 );
-        subtraction(77, 23);
-        subtraction(1232, -132);
+        System.out.println("Type a number");
+
+        int number = getInt();
+
+        double squareNumber = countSquare(number);
+
+        System.out.println("Square of this number equals: " + squareNumber);
     }
-    public static void subtraction(int a, int b) {
-        System.out.println(a - b);
+    public static int getInt() {
+        return new Scanner(System.in).nextInt();
+    }
+    public static double countSquare(int number) {
+        return number * number;
     }
 }
 
