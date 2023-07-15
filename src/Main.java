@@ -2,10 +2,15 @@
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Area equals " + area(5));
+        division(10, 0);
+        division(34, 12);
+        division(88, 9);
     }
-    public static double area (int radius) {
-    return Math.PI * radius * radius;
+    public static void division(double a, double b) {
+        if (b == 0) {
+            System.out.println("Cannot be divided by 0");
+            return;
+        }
+            System.out.println("Result of division equals: " + (a / b));
+        }
     }
-}
-
