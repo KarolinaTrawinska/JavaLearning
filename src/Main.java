@@ -1,28 +1,34 @@
-//Methods
+//First tests
 
 public class Main {
     public static void main(String[] args) {
-        typeThis(10);
-        typeThis(3.14);
-        typeThis(19, 22);
-        typeThis("Hello");
-        typeThis(new int[]{1, 3, 5});
+        square_positiveNumber_positiveNumbersquare();
+        square_negativeNumber_negativeNumbersquare();
+        square_numberZero_zero();
     }
-        public static void typeThis(int number) {
-            System.out.println("Lucky number is: " + number);
-        }
-        public static void typeThis(double x) {
-            System.out.println("Pi equals: " + x);
-        }
-        public static void typeThis(int firstNumber, int secondNumber) {
-            System.out.println("Lucky numbers are: " + firstNumber + "," + secondNumber);
-        }
-        public static void typeThis(String word) {
-            System.out.println("First word is: " + word);
-        }
-        public static void typeThis(int[] table) {
-            for (int i = 0; i < table.length; i++) {
-                System.out.println("Element number " + i + " is: " + table[i]);
-            }
+
+    public static int square(int x) {
+        return x * x;
+    }
+    public static void square_positiveNumber_positiveNumbersquare() {
+        int result = square(20);
+
+        if (result != 400) {
+            System.out.println("Icorrect result for number 20: " + result);
         }
     }
+    public static void square_negativeNumber_negativeNumbersquare() {
+        int result = square(-5);
+
+        if (result != 25) {
+            System.out.println("Incorrect result for number -5: " + result);
+        }
+    }
+    public static void square_numberZero_zero() {
+        int result = square(0);
+
+        if (result != 0) {
+            System.out.println("Incorrect result for number 0: " + result);
+        }
+    }
+}
