@@ -2,33 +2,45 @@
 
 public class Main {
     public static void main(String[] args) {
-        square_positiveNumber_positiveNumbersquare();
-        square_negativeNumber_negativeNumbersquare();
-        square_numberZero_zero();
+        isEven_evenPositivenumber_even();
+        isEven_evenNegativenumber_even();
+        isEven_notEvenpositiveNumber_even();
+        isEven_notEvennegativeNumber_even();
+        isEven_zero_even();
+    }
+    public static boolean isEven(int number) {
+        return number % 2 == 0;
     }
 
-    public static int square(int x) {
-        return x * x;
+    public static void isEven_evenPositivenumber_even() {
+        assertEquals(true, isEven(10));
     }
 
-    public static void square_positiveNumber_positiveNumbersquare() {
-        int result = square(20);
-        assertEquals(400, result);
-        }
+    public static void isEven_evenNegativenumber_even() {
+        assertEquals(true, isEven(-10));
+    }
 
-    public static void square_negativeNumber_negativeNumbersquare() {
-        int result = square(-5);
-        assertEquals(25, result);
-        }
+    public static void isEven_notEvenpositiveNumber_even() {
+        assertEquals(false, isEven(13));
+    }
 
-    public static void square_numberZero_zero(){
-        int result = square(0);
-        assertEquals(0, result);
-        }
+    public static void isEven_notEvennegativeNumber_even() {
+        assertEquals(false, isEven(-27));
+    }
 
-   public static void assertEquals(int expected, int actual) {
+    public static void isEven_zero_even() {
+        assertEquals(true, isEven(0));
+    }
+
+    public static void assertEquals (boolean expected, boolean actual) {
         if (expected != actual) {
-        System.out.println("Expected result is different than the actual result. Expected: " + expected + " , actual: " + actual);
-            }
+            System.out.println("Expected result: " + expected + " , actual result: " + actual);
         }
     }
+}
+
+
+
+
+
+//Czy liczba jest parzysta?
