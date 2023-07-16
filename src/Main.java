@@ -6,7 +6,7 @@ public class Main {
         square_negativeNumber_negativeNumbersquare();
         square_numberZero_zero();
     }
-
+    
     public static int square(int x) {
         return x * x;
     }
