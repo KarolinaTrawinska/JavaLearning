@@ -1,10 +1,19 @@
-
 public class Main {
     public static void main(String[] args) {
-        Person Karolina = new Person("Karolina", 28, true);
-        Person Freddie = new Person("Freddie", 77, false);
+        String word = "Ala ma psa i loda";
+        int occurancesA = countOccurances(word, 'a');
+        System.out.println(occurancesA);
 
-        Karolina.introduceYourself();
-        Freddie.introduceYourself();
+        int occurancesL = countOccurances(word, 'l');
+        System.out.println(occurancesL);
+    }
+    public static int countOccurances(String word, char letter) {
+        int occurances = 0;
+        for (int i = 0; i < word.length(); i++) {
+            if (letter == word.charAt(i)) {
+                occurances = occurances + 1;
+            }
+        }
+        return occurances;
     }
 }
