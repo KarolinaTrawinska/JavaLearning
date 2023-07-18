@@ -1,18 +1,10 @@
 
 public class Main {
     public static void main(String[] args) {
-        Person Karolina = new Person();
-        Karolina.name = "Karolina";
-        Karolina.age = 28;
-        Karolina.isAlive = true;
+        Person Karolina = new Person("Karolina", 28, true);
+        Person Freddie = new Person("Freddie", 77, false);
 
-        Person Freddie = new Person();
-        Freddie.name = "Freddie";
-        Freddie.age = 77;
-        Freddie.isAlive = false;
-
-       Karolina.introduceYourself();
-       Freddie.introduceYourself();
-
+        Karolina.introduceYourself();
+        Freddie.introduceYourself();
     }
 }
