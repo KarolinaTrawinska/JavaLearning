@@ -1,25 +1,14 @@
 public class Main {
     public static void main(String[] args) {
-        absolutNumber_positiveNumber_getPositive();
-        absolutNumber_negativeNumber_getPositive();
-    }
-    public static int absolutNumber(int x ) {
-        if (x < 0) {
-            return -x;
-        } else {
-            return x;
-        }
-    }
-    public static void absolutNumber_positiveNumber_getPositive() {
-        int result = absolutNumber(20);
-        if (result != 20) {
-            System.out.println("Incorrect result for positive number");
-        }
-    }
-    public static void absolutNumber_negativeNumber_getPositive() {
-        int result = absolutNumber(-10);
-        if (result != 10) {
-            System.out.println("Incorrect result for negative number");
-        }
+        Car car1 = new Car();
+        car1.defineSpeed(60);
+        car1.defineColour("red ");
+
+        Car car2 = new Car();
+        car2.defineSpeed(120);
+        car2.defineColour("black ");
+
+        car1.describeCar();
+        car2.describeCar();
     }
 }
