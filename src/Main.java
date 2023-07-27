@@ -1,19 +1,25 @@
 public class Main {
     public static void main(String[] args) {
-        String word = "Ala ma psa i loda";
-        int occurancesA = countOccurances(word, 'a');
-        System.out.println(occurancesA);
-
-        int occurancesL = countOccurances(word, 'l');
-        System.out.println(occurancesL);
+        absolutNumber_positiveNumber_getPositive();
+        absolutNumber_negativeNumber_getPositive();
     }
-    public static int countOccurances(String word, char letter) {
-        int occurances = 0;
-        for (int i = 0; i < word.length(); i++) {
-            if (letter == word.charAt(i)) {
-                occurances = occurances + 1;
-            }
+    public static int absolutNumber(int x ) {
+        if (x < 0) {
+            return -x;
+        } else {
+            return x;
         }
-        return occurances;
+    }
+    public static void absolutNumber_positiveNumber_getPositive() {
+        int result = absolutNumber(20);
+        if (result != 20) {
+            System.out.println("Incorrect result for positive number");
+        }
+    }
+    public static void absolutNumber_negativeNumber_getPositive() {
+        int result = absolutNumber(-10);
+        if (result != 10) {
+            System.out.println("Incorrect result for negative number");
+        }
     }
 }
