@@ -1,12 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        Person person1 = new Person();
-
-        person1.setName("Karolina");
-        person1.setSurname(" Trawińska");
-        person1.setAge(28);
-
-        System.out.println(person1);
-
+        Book book1 = new Book();
+        book1.title = "Harry Potter";
+        book1.author = "J.K. Rowling";
+        book1.setPrice(49.99);
+        System.out.println(book1);
     }
 }
