@@ -8,7 +8,7 @@ public class Car {
     public void defineColour (String newColour) {
         colour = newColour;
     }
-    public void describeCar() {
-        System.out.println("This car is " + colour + "and can drive " + speed + " km/h" );
+    public String toString () {
+        return "This car is " + colour + "and can drive " + speed + " km/h";
     }
 }

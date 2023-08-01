@@ -8,7 +8,7 @@ public class Main {
         car2.defineSpeed(120);
         car2.defineColour("black ");
 
-        car1.describeCar();
-        car2.describeCar();
+        System.out.println(car1);
+        System.out.println(car2);
     }
 }
