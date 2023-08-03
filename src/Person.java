@@ -1,22 +1,15 @@
 public class Person {
-    public String name;
-    public String surname;
-    public int age;
+    private String name;
+    private int age;
 
-    public void setName(String personName) {
-        name = personName;
+
+    public void setAge(int ageParameter) {
+        age = ageParameter;
     }
-    public void setSurname(String personSurname) {
-        surname = personSurname;
-    }
-    public void setAge(int personAge) {
-        age = personAge;
-    }
-    public String toString () {
-        return "My name is " + name + surname + " and I'm " + age + " years old";
+    public String getAge() {
+        return age + " lat";
     }
 }
-
 
 
 
