@@ -1,15 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Test pointA = new Test();
-        Test pointB = new Test();
+        Person Karolina = new Person("Karolina",28, true);
 
-        pointA.setX(10);
-        pointA.setY(22);
-
-        pointB.setX(234);
-        pointB.setY(2);
-
-        System.out.println(pointA);
-        System.out.println(pointB);
+        System.out.println(Karolina);
     }
 }
