@@ -1,7 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        Person Karolina = new Person("Karolina",28, true);
+        Test JeleniaGóra = new Test("Jelenia Góra", "Wyczółkowskiego", 43);
+        Test Gdynia = new Test("Gdynia", "Morska", 214);
 
-        System.out.println(Karolina);
+        System.out.println(JeleniaGóra);
+        System.out.println(Gdynia);
     }
 }

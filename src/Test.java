@@ -1,22 +1,14 @@
-import java.awt.*;
-
 public class Test {
-    private int x;
-    private int y;
+    private String town;
+    private String street;
+    private int number;
 
-    public void setX(int x) {
-        this.x = x;
-    }
-    public void setY(int y) {
-        this.y = y;
-    }
-    public int getX() {
-        return x;
-    }
-    public int getY() {
-        return y;
+    public Test (String town, String street, int number) {
+        this.town = town;
+        this.street = street;
+        this.number = number;
     }
     public String toString() {
-        return x + "," + y;
+        return "Address is: " + town + ", " + street + ", " + number;
     }
 }
