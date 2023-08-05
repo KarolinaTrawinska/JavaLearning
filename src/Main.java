@@ -1,17 +1,15 @@
-
 public class Main {
     public static void main(String[] args) {
-        Book HarryPotter = new Book();
-        Book Flowers = new Book();
+        Test pointA = new Test();
+        Test pointB = new Test();
 
-        HarryPotter.setName("Harry Potter");
-        HarryPotter.setPrice(45.99);
+        pointA.setX(10);
+        pointA.setY(22);
 
-        Flowers.setName("Flowers");
-        Flowers.setPrice(25.99);
+        pointB.setX(234);
+        pointB.setY(2);
 
-        System.out.println(HarryPotter);
-        System.out.println(Flowers);
+        System.out.println(pointA);
+        System.out.println(pointB);
     }
 }
-
