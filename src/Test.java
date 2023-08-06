@@ -1,14 +1,19 @@
 public class Test {
-    private String town;
-    private String street;
-    private int number;
+    private int x;
+    private int y;
 
-    public Test (String town, String street, int number) {
-        this.town = town;
-        this.street = street;
-        this.number = number;
+    public Test(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
-    public String toString() {
-        return "Address is: " + town + ", " + street + ", " + number;
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || this.getClass() != o.getClass()) {
+            return false;
+        }
+        Test other = (Test) o;
+        return this.x == other.x && this.y == other.y;
     }
 }
