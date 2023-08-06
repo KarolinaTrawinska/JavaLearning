@@ -1,10 +1,12 @@
-public class Test {
-    private int x;
-    private int y;
+import java.awt.*;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
-    public Test(int x, int y) {
-        this.x = x;
-        this.y = y;
+public class Test {
+    private Point[] points;
+
+    public Test(Point[] points) {
+        this.points = points;
     }
     public boolean equals(Object o) {
         if (this == o) {
@@ -14,6 +16,8 @@ public class Test {
             return false;
         }
         Test other = (Test) o;
-        return this.x == other.x && this.y == other.y;
+        return Arrays.equals(this.points,other.points);
     }
+
+
 }
