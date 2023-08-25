@@ -1,8 +1,18 @@
+import computer.Laptop;
+import computer.PC;
+
 public class Main {
     public static void main(String[] args) {
-        Person p1 = new Person("Karolina", "Trawińska", 28);
-        Person p2 = new Person("Mateusz", "Wiśniewski", 28);
+        PC officeComputer = new PC("Office computer", "HP", 128);
+        Laptop gamingLaptop = new Laptop("XGame", "Acer", 256);
 
-        System.out.println(Person.userCounter);
+        officeComputer.switchOn();
+        System.out.println(officeComputer.getState());
+
+        gamingLaptop.switchOn();
+        System.out.println(gamingLaptop.getState());
+
+        officeComputer.showName();
+        gamingLaptop.showName();
     }
 }

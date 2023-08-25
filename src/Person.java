@@ -3,7 +3,7 @@ public class Person {
     private String lastName;
     private int age;
 
-    public static int userCounter = 0;
+    private static int userCounter = 0;
 
     public Person(String firstName, String lastName, int age) {
         this.firstName = firstName;
@@ -28,5 +28,8 @@ public class Person {
     }
     public int age() {
         return age;
+    }
+    public static int getUserCounter() {
+        return userCounter;
     }
 }
