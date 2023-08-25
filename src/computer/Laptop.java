@@ -17,9 +17,5 @@ public class Laptop extends Computer {
             System.out.println("Battery level too low");
         }
     }
-
-    public void setBatterlevel(int newBatterlevel) {
-        batteryLevel = newBatterlevel;
-    }
 }
 
