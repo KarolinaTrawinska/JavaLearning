@@ -7,12 +7,6 @@ public class Main {
         Laptop gamingLaptop = new Laptop("XGame", "Acer", 256);
 
         officeComputer.switchOn();
-        System.out.println(officeComputer.getState());
-
         gamingLaptop.switchOn();
-        System.out.println(gamingLaptop.getState());
-
-        officeComputer.showName();
-        gamingLaptop.showName();
     }
 }
