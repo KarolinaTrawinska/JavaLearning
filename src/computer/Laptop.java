@@ -1,18 +1,25 @@
 package computer;
 
 public class Laptop extends Computer {
-    public Laptop(String name, String type, int ram) {
-        super(name, type, ram);
-    }
 
-    public void showName() {
-        System.out.println(name);
+    private int batteryLevel;
+    public Laptop(String name, String type, int ram, int batteryLevel) {
+        super(name, type, ram);
+        this.batteryLevel = batteryLevel;
     }
 
     @Override
     public void switchOn() {
         System.out.println("Checking battery level");
-        super.switchOn();
+        if(batteryLevel > 0) {
+            super.switchOn();
+        } else {
+            System.out.println("Battery level too low");
+        }
+    }
+
+    public void setBatterlevel(int newBatterlevel) {
+        batteryLevel = newBatterlevel;
     }
 }
 
