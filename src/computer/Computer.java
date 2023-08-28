@@ -50,5 +50,9 @@ public class Computer {
     public boolean getState() {
         return state;
     }
+
+    public void showComputername() {
+        System.out.println(name);
+    }
 }
 

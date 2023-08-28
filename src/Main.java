@@ -14,5 +14,7 @@ public class Main {
         for (Computer computer : computers) {
             computer.switchOff();
         }
+        officeComputer1.showComputername();
+        ((PC)officeComputer2).showComputername();
     }
 }
