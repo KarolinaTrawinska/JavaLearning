@@ -1,16 +1,18 @@
 package computer;
 
-public class Computer {
+public abstract class Computer {
     protected String name;
     protected String type;
     protected int ram;
     protected boolean state;
+    protected int volumeLevel;
 
     public Computer(String name, String type, int ram) {
         this.name = name;
         this.type = type;
         this.ram = ram;
         this.state = false;
+        this.volumeLevel = 0;
     }
 
     public String getName() {
@@ -54,5 +56,7 @@ public class Computer {
     public void showComputername() {
         System.out.println(name);
     }
+    public abstract int volumeUp();
+
 }
 

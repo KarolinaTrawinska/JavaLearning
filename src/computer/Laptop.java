@@ -7,8 +7,11 @@ public class Laptop extends Computer {
         super(name, type, ram);
         this.batteryLevel = batteryLevel;
     }
+    public int volumeUp() {
+        return volumeLevel += 5;
+    }
 
-    @Override
+        @Override
     public void switchOn() {
         System.out.println("Checking battery level");
         if(batteryLevel > 0) {
