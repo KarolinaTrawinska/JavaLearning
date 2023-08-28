@@ -58,5 +58,7 @@ public abstract class Computer {
     }
     public abstract int volumeUp();
 
+    public abstract int volumeDown();
+
 }
 

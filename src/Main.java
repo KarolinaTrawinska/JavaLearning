@@ -2,8 +2,6 @@ import computer.Computer;
 import computer.Laptop;
 import computer.PC;
 
-import java.util.Optional;
-
 public class Main {
     public static void main(String[] args) {
         Computer officeComputer1 = new PC("Office computer 1", "HP", 128);
@@ -13,7 +11,11 @@ public class Main {
         Computer macbook = new Laptop("MB Pro", "Pro", 256, 99);
 
         System.out.println(officeComputer1.volumeUp());
-        System.out.println(gamingLaptop.volumeUp());
+        System.out.println(officeComputer1.volumeDown());
 
+        System.out.println(macbook.volumeUp());
+        System.out.println(macbook.volumeDown());
+        System.out.println(macbook.volumeUp());
+        System.out.println(macbook.volumeDown());
     }
 }

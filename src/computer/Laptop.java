@@ -11,7 +11,17 @@ public class Laptop extends Computer {
         return volumeLevel += 5;
     }
 
-        @Override
+    @Override
+    public int volumeDown() {
+        volumeLevel -= 2;
+        if (volumeLevel <= 0) {
+            return 0;
+        } else {
+            return volumeLevel;
+        }
+    }
+
+    @Override
     public void switchOn() {
         System.out.println("Checking battery level");
         if(batteryLevel > 0) {
