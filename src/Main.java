@@ -1,16 +1,15 @@
-import computer.Computer;
-import computer.Hdd;
-import computer.Laptop;
-import computer.Ram;
+import computer.*;
 
 public class Main {
     public static void main(String[] args) {
-        Hdd hdd = new Hdd("Samsung", 500);
-        Ram ram = new Ram("Sony", 128);
+        BugReporter bugReporter = new BugReporter("Karolina", "Trawińska", "karolina@gmail.com");
+        Bug bug1 = new Bug("Internet is not working", 10, bugReporter);
 
-        Computer mac = new Laptop("Mac", "Pro", ram, hdd, 100);
+        System.out.println(bug1);
 
-        System.out.println(mac.getRam().getSize());
+        bug1.setBugStatus(true);
+
+        System.out.println(bug1);
 
     }
 }
