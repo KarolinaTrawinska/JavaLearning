@@ -1,8 +1,39 @@
 package computer;
 
-public class Laptop extends Computer {
-
+public class Laptop extends Computer implements Music, Video {
     private int batteryLevel;
+
+    @Override
+    public void playMusic() {
+        System.out.println("Play music");
+    }
+
+    @Override
+    public void pauseMusic() {
+        System.out.println("Pause music");
+
+    }
+
+    @Override
+    public void stopMusic() {
+        System.out.println("Stop music");
+
+    }
+
+    @Override
+    public void playVideo() {
+        System.out.println("Play video");
+    }
+
+    @Override
+    public void pauseVideo() {
+        System.out.println("Pause video");
+    }
+
+    @Override
+    public void stopVideo() {
+        System.out.println("Stop video");
+    }
 
     public Laptop(String name, String type, int ram, int batteryLevel) {
         super(name, type, ram);
@@ -55,4 +86,5 @@ public class Laptop extends Computer {
             return volumeLevel;
         }
     }
+
 }
