@@ -7,17 +7,7 @@ public class Main {
         Laptop gamingLaptop = new Laptop("XGame", "Acer", 256, 85);
         Laptop macbook = new Laptop("MB Pro", "Pro", 256, 99);
 
-        macbook.playMusic();
-        macbook.pauseMusic();
-        macbook.stopMusic();
-
-        macbook.sayHellofromMusic();
-
-        gamingLaptop.playVideo();
-        gamingLaptop.pauseVideo();
-        gamingLaptop.stopVideo();
-
-        gamingLaptop.sayHellofromVideo();
+        gamingLaptop.sayHello();
 
     }
 }

@@ -12,6 +12,10 @@ public interface Music {
     default void sayHellofromMusic() {
         System.out.println("Hello from music");
     }
+    default void sayHello() {
+        System.out.println("Default hello from Music");
+
+    }
     static String getName() {
         return NAME;
     }
