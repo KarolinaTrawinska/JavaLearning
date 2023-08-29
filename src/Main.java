@@ -10,12 +10,20 @@ public class Main {
         Computer gamingLaptop = new Laptop("XGame", "Acer", 256, 85);
         Computer macbook = new Laptop("MB Pro", "Pro", 256, 99);
 
-        System.out.println(officeComputer1.volumeUp());
-        System.out.println(officeComputer1.volumeDown());
+        officeComputer1.volumeUp();
+        System.out.println(officeComputer1.getVolumeLevel());
 
-        System.out.println(macbook.volumeUp());
-        System.out.println(macbook.volumeDown());
-        System.out.println(macbook.volumeUp());
-        System.out.println(macbook.volumeDown());
+        officeComputer1.volumeUp(58);
+        System.out.println(officeComputer1.getVolumeLevel());
+
+        officeComputer1.volumeUp(58);
+        System.out.println(officeComputer1.getVolumeLevel());
+
+        officeComputer1.volumeDown(10);
+        System.out.println(officeComputer1.getVolumeLevel());
+
+        officeComputer1.volumeDown(100);
+        System.out.println(officeComputer1.getVolumeLevel());
+
     }
 }

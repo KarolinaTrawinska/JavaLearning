@@ -15,6 +15,14 @@ public abstract class Computer {
         this.volumeLevel = 0;
     }
 
+    public int getVolumeLevel() {
+        return volumeLevel;
+    }
+
+    public void setVolumeLevel(int volumeLevel) {
+        this.volumeLevel = volumeLevel;
+    }
+
     public String getName() {
         return name;
     }
@@ -56,9 +64,15 @@ public abstract class Computer {
     public void showComputername() {
         System.out.println(name);
     }
+
     public abstract int volumeUp();
 
     public abstract int volumeDown();
+
+    public abstract int volumeUp(int newVolumelevel);
+
+    public abstract int volumeDown(int newVolumelevel);
+
 
 }
 

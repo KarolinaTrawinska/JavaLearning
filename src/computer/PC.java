@@ -39,5 +39,27 @@ public class PC extends Computer {
             System.out.println("No power");
         }
     }
+
+    @Override
+    public int volumeUp(int newVolumelevel) {
+        volumeLevel = volumeLevel + newVolumelevel;
+        if (volumeLevel >= 100) {
+            volumeLevel = 100;
+            return volumeLevel;
+        } else {
+            return volumeLevel;
+        }
+    }
+
+    @Override
+    public int volumeDown(int newVolumelevel) {
+        volumeLevel = volumeLevel - newVolumelevel;
+        if (volumeLevel <= 0) {
+            volumeLevel = 0;
+            return volumeLevel;
+        } else {
+            return volumeLevel;
+        }
+    }
 }
 
