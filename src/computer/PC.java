@@ -3,8 +3,8 @@ package computer;
 public class PC extends Computer {
     private boolean power;
 
-    public PC(String name, String type, int ram) {
-        super(name, type, ram);
+    public PC(String name, String type, Ram ram, Hdd hdd) {
+        super(name, type, hdd, ram);
         power = false;
     }
 

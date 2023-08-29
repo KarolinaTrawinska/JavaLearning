@@ -3,6 +3,11 @@ package computer;
 public class Laptop extends Computer implements Music, Video {
     private int batteryLevel;
 
+    public Laptop(String name, String type, Ram ram, Hdd hdd, int batteryLevel) {
+        super(name, type, hdd, ram);
+        this.batteryLevel = batteryLevel;
+    }
+
     @Override
     public void playMusic() {
         System.out.println("Play music");
@@ -33,11 +38,6 @@ public class Laptop extends Computer implements Music, Video {
     @Override
     public void stopVideo() {
         System.out.println("Stop video");
-    }
-
-    public Laptop(String name, String type, int ram, int batteryLevel) {
-        super(name, type, ram);
-        this.batteryLevel = batteryLevel;
     }
 
     public int volumeUp() {

@@ -3,13 +3,15 @@ package computer;
 public abstract class Computer {
     protected String name;
     protected String type;
-    protected int ram;
+    protected Ram ram;
+    protected Hdd hdd;
     protected boolean state;
     protected int volumeLevel;
 
-    public Computer(String name, String type, int ram) {
+    public Computer(String name, String type, Hdd hdd, Ram ram) {
         this.name = name;
         this.type = type;
+        this.hdd = hdd;
         this.ram = ram;
         this.state = false;
         this.volumeLevel = 0;
@@ -39,12 +41,20 @@ public abstract class Computer {
         this.type = type;
     }
 
-    public int getRam() {
+    public Ram getRam() {
         return ram;
     }
 
-    public void setRam(int ram) {
+    public void setRam(Ram ram) {
         this.ram = ram;
+    }
+
+    public Hdd getHdd() {
+        return hdd;
+    }
+
+    public void setHdd(Hdd hdd) {
+        this.hdd = hdd;
     }
 
     public void switchOn() {
