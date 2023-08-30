@@ -1,33 +1,27 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
-        List<Person> users = new ArrayList<>();
+        Set<String> names = new HashSet<>();
+        names.add("Karolina");
+        names.add("Mateusz");
+        names.add("Asia");
+        names.add("Aneta");
+        names.add("Robert");
+        names.add("Karolina");
 
-        users.add(new Person("Karolina", "Trawińska", 28));
-        users.add(new Person("Mateusz", "Wiśniewski", 28));
-        users.add(new Person("Aneta", "Trawińska", 51));
-        users.add(new Person("Marian", "Blabla", 55));
-
-        for (Person Person : users) {
-            System.out.println(Person.getFirstName());
+        for (String name : names) {
+            System.out.println(name);
         }
 
-//        Sortowanie po danym parametrze wymaga użycia comparatora i referencji do metody
-        Collections.sort(users, Comparator.comparing(Person::getFirstName));
-        System.out.println(users);
+        Set<String> sortedNames = new TreeSet<>(names);
+        System.out.println(names);
 
-        Collections.sort(users, Comparator.comparingInt(Person::getAge));
-        for (Person Person : users) {
-            System.out.println(Person.getFirstName() + " " + Person.getAge());
-        }
 
-        Collections.sort(users, Comparator.comparingInt(Person::getAge).reversed());
-        for (Person Person : users) {
-            System.out.println(Person.getFirstName() + " " + Person.getAge());
-        }
+
+
+
     }
 }
