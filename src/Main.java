@@ -1,55 +1,33 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> names = new ArrayList<>();
-        List<String> names1 = new ArrayList<>();
+        List<Person> users = new ArrayList<>();
 
-        names.add("Karolina");
-        names.add("Mateusz");
-        names.add("Bartek");
-        names.add("Aneta");
-        names.add("Marian");
+        users.add(new Person("Karolina", "Trawińska", 28));
+        users.add(new Person("Mateusz", "Wiśniewski", 28));
+        users.add(new Person("Aneta", "Trawińska", 51));
+        users.add(new Person("Marian", "Blabla", 55));
 
-        names1.add("Asia");
-        names1.add("Adrian");
+        for (Person Person : users) {
+            System.out.println(Person.getFirstName());
+        }
 
-        System.out.println(names);
+//        Sortowanie po danym parametrze wymaga użycia comparatora i referencji do metody
+        Collections.sort(users, Comparator.comparing(Person::getFirstName));
+        System.out.println(users);
 
-//        Usuwanie elementu po numerze indeksu
-        names.remove(0);
-        System.out.println(names);
+        Collections.sort(users, Comparator.comparingInt(Person::getAge));
+        for (Person Person : users) {
+            System.out.println(Person.getFirstName() + " " + Person.getAge());
+        }
 
-//        Usuwanie elementu po nazwie obiektu który chcemy usunąć
-        names.remove("Bartek");
-        System.out.println(names);
-
-//        Pobieranie i wyświetlanie konkretnego elementu
-        String name = names.get(0);
-        System.out.println(name);
-
-//        Sprawdzanie długości listy
-        System.out.println(names.size());
-
-//        Sprawdzanie czy tablica zawiera dany element, zwraca true/false
-        System.out.println(names.contains("Marian"));
-
-//        Sprawdzanie czy tablica jest pusta, zwraca true lub false
-        System.out.println(names.isEmpty());
-
-//        Dodawanie zawartości jeden tablicy do drugiej
-        names.addAll(names1);
-        System.out.println(names);
-
-//        Sortowanie elementów alfabetycznie
-        Collections.sort(names);
-        System.out.println(names);
-
-//        Sortowanie elementów odwrotnie
-        Collections.reverse(names);
-        System.out.println(names);
-
+        Collections.sort(users, Comparator.comparingInt(Person::getAge).reversed());
+        for (Person Person : users) {
+            System.out.println(Person.getFirstName() + " " + Person.getAge());
+        }
     }
 }
