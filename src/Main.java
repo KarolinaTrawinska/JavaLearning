@@ -4,24 +4,23 @@ import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
-        Set<String> names = new HashSet<>();
-        names.add("Karolina");
-        names.add("Mateusz");
-        names.add("Asia");
-        names.add("Aneta");
-        names.add("Robert");
-        names.add("Karolina");
+        Set<Person> users = new HashSet<>();
+        users.add(new Person("Karolina", "Trawinska", 28));
+        users.add(new Person("Karolina", "Trawinska", 28));
+        users.add(new Person("Tomek", "Burak", 12));
+        users.add(new Person("Marian", "Kowalski   ", 87));
+        users.add(new Person("Janusz", "Mak", 56));
+//
+//        for (Person user : users) {
+//            System.out.println(user.getFirstName() + " " + user.getLastName());
+//        }
 
-        for (String name : names) {
-            System.out.println(name);
+//        Porównanie imion i nazwisk użytkowników, klasa Person dostarcza mechanizmu, dzięki temu możliwe jest zwracanie
+//        unikalnych posortowanych elementów
+
+        Set<Person> sortedPerson = new TreeSet<>(users);
+        for (Person user : sortedPerson) {
+            System.out.println(user.getFirstName() + " " + user.getLastName());
         }
-
-        Set<String> sortedNames = new TreeSet<>(names);
-        System.out.println(names);
-
-
-
-
-
     }
 }

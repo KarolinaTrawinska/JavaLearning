@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable<Person> {
     private String firstName;
     private String lastName;
     private int age;
@@ -14,45 +14,36 @@ public class Person {
         userCounter++;
     }
 
-    public void setFirstname(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getFirstName() {
         return firstName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public int getAge() {
         return age;
     }
 
-    public int age() {
-        return age;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public static int getUserCounter() {
         return userCounter;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                '}';
+    public static void setUserCounter(int userCounter) {
+        Person.userCounter = userCounter;
     }
 
     @Override
@@ -66,5 +57,24 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, age);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
+    //    Porównywanie imion i nazwisk
+    @Override
+    public int compareTo(Person user) {
+        int compareResult = this.getFirstName().compareTo(user.getFirstName());
+        if (compareResult == 0) {
+            compareResult = this.getLastName().compareTo(user.getLastName());
+        }
+        return compareResult;
     }
 }
