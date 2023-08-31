@@ -1,36 +1,20 @@
-import computer.Bug;
-import computer.BugReporter;
-
-import java.util.*;
 import java.util.ArrayList;
-import java.util.HashSet;
-
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        List<String> names = new ArrayList<>();
+        names.add("Karolina");
+        names.add("Mateusz");
+        names.add("Adrian");
+        names.add("Kasia");
+        names.add("Feliks");
+        names.add("Franek");
 
-        System.out.println(" *LIST* ");
-        List<Bug> bugs = new ArrayList<>();
-        bugs.add(new Bug("Bug3", 3, new BugReporter("Karolina", "Trawińska", "karolina@email.com")));
-        bugs.add(new Bug("Bug1", 3, new BugReporter("Karolina", "Trawińska", "karolina@email.com")));
-        bugs.add(new Bug("Bug2", 4, new BugReporter("Mateusz", "Wiśnia", "wiśnia@email.com")));
-        bugs.add(new Bug("Bug4", 4, new BugReporter("Mateusz", "Wiśnia", "wiśnia@email.com")));
-        bugs.add(new Bug("Bug3", 3, new BugReporter("Karolina", "Trawińska", "karolina@email.com")));
-
-        for (Bug bug : bugs) {
-            System.out.println(bug.getBugDescription());
-        }
-
-        System.out.println(" *SET* ");
-        Set<Bug> uniqueBugs = new HashSet<>(bugs);
-        for (Bug bug : uniqueBugs) {
-            System.out.println(bug.getBugDescription());
-        }
-
-        System.out.println(" *SORTED* ");
-        Set<Bug> sortedBugs = new TreeSet<>(bugs);
-        for (Bug bug : sortedBugs) {
-            System.out.println(bug.getBugDescription());
+        names.stream()
+                .filter(str -> str.startsWith("F"))
+                .filter(str -> str.contains("k"))
+                .filter(str -> str.endsWith("s"))
+                .forEach(str -> System.out.println(str));
         }
     }
-}
