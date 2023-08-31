@@ -1,20 +1,36 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import computer.Bug;
+import computer.BugReporter;
+
+import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+
 
 public class Main {
     public static void main(String[] args) {
 
-        Map<Integer, String> names = new HashMap<>();
+        System.out.println(" *LIST* ");
+        List<Bug> bugs = new ArrayList<>();
+        bugs.add(new Bug("Bug3", 3, new BugReporter("Karolina", "Trawińska", "karolina@email.com")));
+        bugs.add(new Bug("Bug1", 3, new BugReporter("Karolina", "Trawińska", "karolina@email.com")));
+        bugs.add(new Bug("Bug2", 4, new BugReporter("Mateusz", "Wiśnia", "wiśnia@email.com")));
+        bugs.add(new Bug("Bug4", 4, new BugReporter("Mateusz", "Wiśnia", "wiśnia@email.com")));
+        bugs.add(new Bug("Bug3", 3, new BugReporter("Karolina", "Trawińska", "karolina@email.com")));
 
-        names.put(1, "Karolina");
-        names.put(121, "Bartek");
-        names.put(71, "Marian");
-        names.put(4, "Zosia");
+        for (Bug bug : bugs) {
+            System.out.println(bug.getBugDescription());
+        }
 
-//        Wyświetlanie elementów w pętli
-        for (Map.Entry<Integer, String> entry : names.entrySet()) {
-            System.out.println(entry.getKey() + " " + entry.getValue());
+        System.out.println(" *SET* ");
+        Set<Bug> uniqueBugs = new HashSet<>(bugs);
+        for (Bug bug : uniqueBugs) {
+            System.out.println(bug.getBugDescription());
+        }
+
+        System.out.println(" *SORTED* ");
+        Set<Bug> sortedBugs = new TreeSet<>(bugs);
+        for (Bug bug : sortedBugs) {
+            System.out.println(bug.getBugDescription());
         }
     }
 }
