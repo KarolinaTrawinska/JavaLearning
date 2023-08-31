@@ -12,7 +12,9 @@ public class Main {
         names.put(71, "Marian");
         names.put(4, "Zosia");
 
-        Map<Integer, String> sortedNames = new TreeMap<>(names);
-        System.out.println(sortedNames);
-    } 
+//        Wyświetlanie elementów w pętli
+        for (Map.Entry<Integer, String> entry : names.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
 }
