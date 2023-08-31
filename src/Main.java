@@ -1,26 +1,18 @@
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class Main {
     public static void main(String[] args) {
-        Set<Person> users = new HashSet<>();
-        users.add(new Person("Karolina", "Trawinska", 28));
-        users.add(new Person("Karolina", "Trawinska", 28));
-        users.add(new Person("Tomek", "Burak", 12));
-        users.add(new Person("Marian", "Kowalski   ", 87));
-        users.add(new Person("Janusz", "Mak", 56));
-//
-//        for (Person user : users) {
-//            System.out.println(user.getFirstName() + " " + user.getLastName());
-//        }
 
-//        Porównanie imion i nazwisk użytkowników, klasa Person dostarcza mechanizmu, dzięki temu możliwe jest zwracanie
-//        unikalnych posortowanych elementów
+        Map<Integer, String> names = new HashMap<>();
 
-        Set<Person> sortedPerson = new TreeSet<>(users);
-        for (Person user : sortedPerson) {
-            System.out.println(user.getFirstName() + " " + user.getLastName());
-        }
-    }
+        names.put(1, "Karolina");
+        names.put(121, "Bartek");
+        names.put(71, "Marian");
+        names.put(4, "Zosia");
+
+        Map<Integer, String> sortedNames = new TreeMap<>(names);
+        System.out.println(sortedNames);
+    } 
 }
