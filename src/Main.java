@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -15,33 +16,46 @@ public class Main {
         users.add(new Person("Anna", "Czarny", 33));
         users.add(new Person("Anna", "Zielony", 55));
 
-        System.out.println(" * USERS * ");
-        for (Person user : users) {
-            System.out.println(user.getFirstName() + ", " + user.getLastName() + ", " + user.getAge());
+//        Wyświetlanie elementu z najwyższym zadanym parametrem
+        Optional<Person> max = users.stream()
+                .max(Comparator.comparingInt(Person::getAge));
+        if (max.isPresent()) {
+            System.out.println(max.get());
+        } else {
+            System.out.println("no element");
         }
 
-        System.out.println(" * SORTED USERS * ");
-        List<Person> sortedUsers = users.stream()
-                .sorted(Comparator.comparing(user -> user.getFirstName()))
-                .collect(Collectors.toList());
-        for (Person user : sortedUsers) {
-            System.out.println(user.getFirstName() + ", " + user.getLastName() + ", " + user.getAge());
-        }
+//        Wyświetlanie pierwszego wyfiltrowanego elementu
+        String anna = users.stream()
+                .map(Person::getFirstName)
+                .filter(s -> s.equals("Anna"))
+                .findFirst()
+                .orElse("no element");
+        System.out.println(anna);
 
-        System.out.println(" *  USERS SORTED BY FIRST AND LAST NAME * ");
-        List<Person> extraSortedusers = users.stream()
-                .sorted(Comparator.comparing(Person::getFirstName).thenComparing(Person::getLastName))
-                .collect(Collectors.toList());
-        for (Person user : extraSortedusers) {
-            System.out.println(user.getFirstName() + ", " + user.getLastName() + ", " + user.getAge());
-        }
+//        Zwracanie nowej wartości w przypadku gdy lista nie zawiera wartości której szukamy
+        Person bartek = users.stream()
+                .filter(user -> user.getFirstName().startsWith("B"))
+                .findFirst()
+                .orElseGet(() -> new Person("Bartek", "Testowy", 22));
+        System.out.println(bartek);
 
-        System.out.println(" *  USERS SORTED BY AGE, FIRST AND LAST NAME * ");
-        List<Person> sortedByage = users.stream()
-                .sorted(Comparator.comparing(Person::getFirstName).thenComparing(Person::getLastName).thenComparing(Person::getAge))
-                .collect(Collectors.toList());
-        for (Person user : sortedByage) {
-            System.out.println(user.getFirstName() + ", " + user.getLastName() + ", " + user.getAge());
-        }
+//            Wyjątek
+        users.stream()
+                .filter(user -> user.getFirstName().startsWith("L"))
+                .findFirst()
+                .orElseThrow(() -> new IllegalStateException("no element"));
+
+//        Wyświetlanie rządanego elementu
+        users.stream()
+                .filter(user -> user.getFirstName().startsWith("A"))
+                .findFirst()
+                .ifPresent(user -> System.out.println(user));
+
+//        Wyświetlanie rządanego elementu a jak go nie ma to wyświetlanie teksu
+        users.stream()
+                .filter(user -> user.getFirstName().startsWith("Z"))
+                .findFirst()
+                .ifPresentOrElse(user -> System.out.println(user), () -> System.out.println("no element"));
     }
 }
