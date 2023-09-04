@@ -1,4 +1,7 @@
+import MyException.IllegalAgeException;
+
 import java.util.Objects;
+
 
 public class Person implements Comparable<Person> {
     private String firstName;
@@ -34,9 +37,9 @@ public class Person implements Comparable<Person> {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(int age) throws IllegalAgeException {
         if (age > 100) {
-            throw new IllegalArgumentException("Incorrect age");
+            throw new IllegalAgeException("Incorrect age");
         } else {
             this.age = age;
         }
