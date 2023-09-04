@@ -1,13 +1,24 @@
 import enums.WeekDays;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println(WeekDays.ŚRODA.getName());
+        try {
+            BufferedReader bufferRedreader = new BufferedReader(new FileReader("test.txt"));
+            String line = bufferRedreader.readLine();
 
-        if ("środa".equalsIgnoreCase(WeekDays.ŚRODA.getName())) {
-            System.out.println("OK");
-        } else {
-            System.out.println("NOT OK");
+            while (line != null) {
+                System.out.println(line);
+                line = bufferRedreader.readLine();
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
