@@ -1,8 +1,10 @@
 package computer;
 
+import MyException.IllegalBugPriorityException;
+
 import java.util.Objects;
 
-public class Bug implements ConsoleNotification, Comparable<Bug>{
+public class Bug implements ConsoleNotification, Comparable<Bug> {
     private String bugDescription;
     private int bugPriority;
     private boolean bugStatus;
@@ -28,24 +30,20 @@ public class Bug implements ConsoleNotification, Comparable<Bug>{
     }
 
     public boolean isBugStatus() {
+        notifyStatuschange();
         return bugStatus;
     }
 
-    public void setBugStatus(boolean bugStatus) {
-        notifyStatuschange();
-        this.bugStatus = bugStatus;
-    }
-
     public int getBugPriority() {
+
         return bugPriority;
     }
 
     public void setBugPriority(int bugPriority) {
+        if (bugPriority > 10) {
+            throw new IllegalBugPriorityException("Incorrect bug priority");
+        }
         this.bugPriority = bugPriority;
-    }
-
-    public BugReporter getBugReporter() {
-        return bugReporter;
     }
 
     public void setBugReporter(BugReporter bugReporter) {
@@ -55,6 +53,20 @@ public class Bug implements ConsoleNotification, Comparable<Bug>{
     @Override
     public void notifyStatuschange() {
         System.out.println("Bug status has changed");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Bug bug = (Bug) o;
+        return bugPriority == bug.bugPriority && bugStatus == bug.bugStatus && Objects.equals(bugDescription, bug.bugDescription) && Objects.equals(bugReporter, bug.bugReporter);
+    }
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bugDescription, bugPriority, bugStatus, bugReporter);
     }
 
     @Override
@@ -68,20 +80,16 @@ public class Bug implements ConsoleNotification, Comparable<Bug>{
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Bug bug = (Bug) o;
-        return bugPriority == bug.bugPriority && bugStatus == bug.bugStatus && Objects.equals(bugDescription, bug.bugDescription) && Objects.equals(bugReporter, bug.bugReporter);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(bugDescription, bugPriority, bugStatus, bugReporter);
-    }
-
-    @Override
     public int compareTo(Bug bug) {
         return this.getBugDescription().compareTo(bug.getBugDescription());
-        }
     }
+
+    public void setBugStatus(boolean bugStatus) {
+        this.bugStatus = bugStatus;
+    }
+
+    public BugReporter getBugReporter() {
+        return bugReporter;
+
+    }
+}

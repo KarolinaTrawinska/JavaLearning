@@ -1,4 +1,5 @@
 import MyException.IllegalAgeException;
+import enums.Gender;
 
 import java.util.Objects;
 
@@ -7,14 +8,24 @@ public class Person implements Comparable<Person> {
     private String firstName;
     private String lastName;
     private int age;
+    private Gender gender;
 
     private static int userCounter = 0;
 
-    public Person(String firstName, String lastName, int age) {
+    public Person(String firstName, String lastName, int age, Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.gender = gender;
         userCounter++;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     public String getFirstName() {
@@ -58,13 +69,14 @@ public class Person implements Comparable<Person> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return age == person.age && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName);
+        return age == person.age && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && gender == person.gender;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, age);
+        return Objects.hash(firstName, lastName, age, gender);
     }
+
 
     @Override
     public String toString() {
@@ -72,8 +84,10 @@ public class Person implements Comparable<Person> {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
+                ", gender=" + gender +
                 '}';
     }
+
 
     //    Porównywanie imion i nazwisk
     @Override
