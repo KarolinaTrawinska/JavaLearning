@@ -35,7 +35,11 @@ public class Person implements Comparable<Person> {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if (age > 100) {
+            throw new IllegalArgumentException("Incorrect age");
+        } else {
+            this.age = age;
+        }
     }
 
     public static int getUserCounter() {

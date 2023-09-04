@@ -1,24 +1,43 @@
-import enums.WeekDays;
+import computer.*;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            BufferedReader bufferRedreader = new BufferedReader(new FileReader("test.txt"));
-            String line = bufferRedreader.readLine();
 
-            while (line != null) {
-                System.out.println(line);
-                line = bufferRedreader.readLine();
-            }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+//        NullPointerException
+        Bug bug = new Bug("xxx", 3, new BugReporter("K", "T", "k@gmail.com"));
+        System.out.println(bug.getBugDescription());
+
+        bug = null;
+        System.out.println(bug.getBugDescription());
+
+//        IndexOutOfBoundsException
+        List<String> names = new ArrayList<>();
+        names.add("Karolina");
+
+        System.out.println(names.get(1));
+
+//       IllegalStateExceptionq
+        List<String> names = new ArrayList<>();
+        names.add("Karolina");
+        names.add("Mateusz");
+        names.add("Adrian");
+        names.add("Asia");
+
+        names.stream()
+                .filter(s -> s.startsWith("B"))
+                .findFirst()
+                .orElseThrow(() -> new IllegalStateException("No element"));
+
+//       IllegalArgumentException
+        Person user = new Person("K", "T", 3);
+        user.setAge(122);
+
+//       UnsupportedOperationException
+        PC Samsung = new PC("Samsung", "X", new Ram("X", 100), new Hdd("X", 110));
+        Samsung.volumeUp(111);
     }
 }
+
